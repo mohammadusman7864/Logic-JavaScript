@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #s{
+    background-color: white;
+  }
+</style>
+
+<body>
+
+  <h1>Array Assignment</h1>
+
+  <!---------------------Color--Change---------------------->
+  
+  <div>
+    <ul id="s"></ul>
+    Enter Your Color:
+    <input type="text"  id="A">
+    <button>Add</button>
+    <button onclick="colorChange()">Color Change</button>
+  </div>
+
+ 
+  
+
+
+
+
+  <!-----------script------------>
+  <script>
+ // <--------------------Color-Change-add-List-------------------->
+
+ let users = ['Marks', 'James', 'Peter', 'Jane', 'Mary'];
+function addUsers(){
+    let template = users.map(user => `<li>${user}</li>`).join('\n');
+    document.querySelector('ul').innerHTML = template;
+}
+addUsers();
+let btnAdd = document.querySelector('button');
+let input = document.querySelector('input');
+btnAdd.addEventListener('click', () =>{
+    users.push(input.value);
+    input.value = '';
+    addUsers();        
+});
+ 
+
+ function colorChange() {
+      var col = (document.getElementById('A').value)
+      var list = (document.getElementById('s').style.backgroundColor = col)
+      onclick = document.getElementById('A').value = ' '
+    }
+
+
+ 
+  </script>
+
+</body>
+
+</html>
